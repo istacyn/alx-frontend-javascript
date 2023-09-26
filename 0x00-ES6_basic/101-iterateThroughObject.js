@@ -6,4 +6,4 @@ export default function iterateThroughObject(reportWithIterator) {
   }
 
   return employeesArray.join(' | ');
- }
+}
