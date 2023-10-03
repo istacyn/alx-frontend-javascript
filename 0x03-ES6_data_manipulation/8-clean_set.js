@@ -11,7 +11,7 @@ export default function cleanSet (set, startString) {
 
   for (const element of set) {
     if (element && element.startsWith(startString)) {
-      array.push(element.slice(startString.length))
+      array.push(element.slice(startString.length));
     }
   }
   return array.join('-');
