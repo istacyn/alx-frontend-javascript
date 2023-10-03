@@ -1,4 +1,6 @@
 export default function cleanSet (set, startString) {
+  const array = [];
+
   if (
     typeof set !== 'object'
     || typeof startString !== 'string'
@@ -7,11 +9,10 @@ export default function cleanSet (set, startString) {
     return '';
   }
 
-  const arrayFromSet = Array.from(set);
-
-  const filteredArray = arrayFromSet.filter((value) => value.startsWith(startString));
-
-  const cleanedArray = filteredArray.map((value) => value.slice(startString.length));
-
-  return cleanedArray.join('-');
+  for (const element of set) {
+    if (element && element.startsWith(startString)) {
+      array.push(element.slice(startString.length))
+    }
+  }
+  return array.join('-');
 }
